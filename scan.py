@@ -191,6 +191,7 @@ def sns_scan_results(
         Message=json.dumps({"default": json.dumps(message)}),
         MessageStructure="json",
         MessageAttributes={
+            "bucket":  {"DataType": "String", "StringValue": s3_object.bucket_name},
             AV_STATUS_METADATA: {"DataType": "String", "StringValue": scan_result},
             AV_SIGNATURE_METADATA: {
                 "DataType": "String",
